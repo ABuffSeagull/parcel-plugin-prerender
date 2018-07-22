@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const mkdirp = require('mkdirp');
-const chalk = require('chalk');
 const cosmiconfig = require('cosmiconfig');
 const Prerenderer = require('@prerenderer/prerenderer');
 const Puppeteer = require('@prerenderer/renderer-puppeteer');
@@ -18,7 +17,7 @@ module.exports = bundler => {
     const {
       config: { routes },
     } = (await explorer.search()) || { config: { routes: ['/'] } };
-    console.log(chalk.bold('\nRendering...'));
+    console.log('Rendering...');
     try {
       await prerenderer.initialize();
       const start = new Date().getTime();
