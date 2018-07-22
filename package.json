@@ -4,11 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "private": true,
-  "devDependencies": {},
   "dependencies": {
     "@prerenderer/prerenderer": "^0.7.1",
     "@prerenderer/renderer-puppeteer": "^0.1.4",
     "chalk": "^2.4.1",
+    "cosmiconfig": "^5.0.5",
     "mkdirp": "^0.5.1"
   }
 }
