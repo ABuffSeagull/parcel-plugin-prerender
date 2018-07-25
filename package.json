@@ -5,8 +5,15 @@
   "homepage": "https://github.com/ABuffSeagull/parcel-plugin-prerender",
   "bugs": "https://github.com/ABuffSeagull/parcel-plugin-prerender/issues",
   "repository": "github:abuffseagull/parcel-plugin-prerender",
-  "keywords": ["prerender", "seo", "spa", "parcel", "parcel-plugin", "static-site-generator"],
-  "version": "1.0.0",
+  "keywords": [
+    "prerender",
+    "seo",
+    "spa",
+    "parcel",
+    "parcel-plugin",
+    "static-site-generator"
+  ],
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
