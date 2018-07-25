@@ -1,5 +1,6 @@
 {
   "name": "parcel-plugin-prerender",
+  "author": "ABuffSeagull <reecevanatta@gmail.com>",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
