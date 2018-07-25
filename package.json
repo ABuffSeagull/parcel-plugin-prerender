@@ -1,6 +1,8 @@
 {
   "name": "parcel-plugin-prerender",
   "author": "ABuffSeagull <reecevanatta@gmail.com>",
+  "description": "prerender plugin for parcel",
+  "keywords": ["prerender", "seo", "spa", "parcel", "parcel-plugin", "static-site-generator"]
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
