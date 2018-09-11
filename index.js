@@ -13,23 +13,26 @@ module.exports = bundler => {
       staticDir: outDir,
       renderer: new Puppeteer(),
     });
-    const explorer = cosmiconfig('prerender');
-    const {
-      config: { routes },
-    } = (await explorer.search()) || { config: { routes: ['/'] } };
-    console.log('Rendering...');
+    let routes = ['/']; // the default route
+    const found = await cosmiconfig('prerender').search();
+    if (found) {
+      const { config } = found;
+      if (Array.isArray(config)) routes = config;
+      else ({ routes } = config);
+    }
+    console.log('\nRendering...');
     try {
       await prerenderer.initialize();
-      const start = new Date().getTime();
+      const start = Date.now();
       const renderedRoutes = await prerenderer.renderRoutes(routes);
-      const end = new Date().getTime();
+      const end = Date.now();
       renderedRoutes.forEach(route => {
         try {
           const outputDir = path.join(outDir, route.route);
           const file = path.normalize(`${outputDir}/index.html`);
           mkdirp.sync(outputDir);
           fs.writeFileSync(file, route.html.trim());
-          const end = new Date().getTime();
+          const end = Date.now();
         } catch (err) {
           console.error(err);
         }
