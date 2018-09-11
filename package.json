@@ -17,12 +17,12 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@prerenderer/prerenderer": "^0.7.1",
-    "@prerenderer/renderer-puppeteer": "^0.1.4",
-    "cosmiconfig": "^5.0.5",
+    "@prerenderer/prerenderer": "^0.7.2",
+    "@prerenderer/renderer-puppeteer": "^0.2.0",
+    "cosmiconfig": "^5.0.6",
     "mkdirp": "^0.5.1"
   },
   "devDependencies": {
-    "prettier": "^1.13.7"
+    "prettier": "^1.14.2"
   }
 }
