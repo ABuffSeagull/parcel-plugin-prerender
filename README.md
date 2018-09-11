@@ -21,7 +21,9 @@ in order to add more paths, add an array of strings corresponding to the paths y
 
 ```json
 {
-  "prerender": ["/", "/about", "/login", "/deep/nested/route"]
+  "prerender": {
+    "routes": ["/", "/about", "/login", "/deep/nested/route"]
+  }
 }
 ```
 
