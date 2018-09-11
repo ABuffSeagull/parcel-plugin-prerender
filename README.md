@@ -15,7 +15,7 @@ npm install parcel-plugin-prerender -D
 By default, this plugin will render the `/` path.
 As this plugin uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig),
 in order to add more paths, add an array of strings corresponding to the paths you want rendered in a 
-`prerender` key in your `package.json`, or a JSON or YAML `.prerenderrc` file, or export the key in a `prerender.config.js` file.
+`routes` key in your `package.json`, or a JSON or YAML `.prerenderrc` file, or export the key in a `prerender.config.js` file.
 
 ### Example
 
