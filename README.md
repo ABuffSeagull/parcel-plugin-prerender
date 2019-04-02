@@ -27,6 +27,49 @@ in order to add more paths, add an array of strings corresponding to the paths y
 }
 ```
 
+### Render configuration
+
+You can configure the renderer (browser) options by using the following example config:
+
+```json
+{
+  "prerender": {
+    "routes": ["/", "/about"],
+    "rendererConfig": {
+      "renderAfterDocumentEvent": "prerender-trigger"
+    }
+  }
+}
+```
+
+This is particularly useful if you'd like to pre-fetch some API data or async config
+and make that part of your pre-rendered HTML.
+
+In the example above, the `/` and `/about` pages will only be rendered when the custom DOM event `prerender-trigger` is dispatched.
+
+You can do so in your code like the following:
+
+```js
+document.dispatchEvent(new Event('prerender-trigger'));
+```
+
+The custom configuration can also be useful for debugging. If the resulting html does not look like what you're expecting you could use the following configuration:
+
+```json
+{
+  "prerender": {
+    "routes": ["/", "/about"],
+    "rendererConfig": {
+      "headless": false
+    }
+  }
+}
+```
+
+To make the pre-render browser visible and you would be available to debug.
+
+To see all the options available see this [documentation](https://github.com/Tribex/prerenderer#prerendererrenderer-puppeteer-options)
+
 ## What is Prerendering?
 
 To quote [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin/blob/master/README.md):
@@ -46,7 +89,3 @@ To quote [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plu
 
 Currently only `@prerenderer/renderer-puppeteer` is supported, although `@prerenderer/renderer-jsdom` 
 will probably be supported in the future
-
-## More options
-
-More options are planned for passing through to the prerenderer.

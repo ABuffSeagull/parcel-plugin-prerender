@@ -8,18 +8,20 @@ const Puppeteer = require('@prerenderer/renderer-puppeteer');
 module.exports = bundler => {
   bundler.on('buildEnd', async () => {
     if (process.env.NODE_ENV !== 'production') return;
-    const { outDir } = bundler.options;
-    const prerenderer = new Prerenderer({
-      staticDir: outDir,
-      renderer: new Puppeteer(),
-    });
     let routes = ['/']; // the default route
     const found = await cosmiconfig('prerender').search();
     if (found) {
       const { config } = found;
       if (Array.isArray(config)) routes = config;
-      else ({ routes } = config);
+      else ({ routes, rendererConfig } = config);
+
+      rendererConfig = rendererConfig || {};
     }
+    const { outDir } = bundler.options;
+    const prerenderer = new Prerenderer({
+      staticDir: outDir,
+      renderer: new Puppeteer(rendererConfig),
+    });
     console.log('\nRendering...');
     try {
       await prerenderer.initialize();
