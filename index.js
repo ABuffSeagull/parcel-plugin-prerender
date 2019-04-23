@@ -17,7 +17,7 @@ module.exports = bundler => {
         routes = config;
       } else {
         if (config.rendererConfig) rendererConfig = config.rendererConfig;
-        if (config.routes) && routes = config.routes;
+        if (config.routes) routes = config.routes;
       }
     }
     const { outDir } = bundler.options;
