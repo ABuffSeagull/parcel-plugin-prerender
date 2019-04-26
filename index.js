@@ -9,13 +9,16 @@ module.exports = bundler => {
   bundler.on('buildEnd', async () => {
     if (process.env.NODE_ENV !== 'production') return;
     let routes = ['/']; // the default route
+    let rendererConfig = {};
     const found = await cosmiconfig('prerender').search();
     if (found) {
       const { config } = found;
-      if (Array.isArray(config)) routes = config;
-      else ({ routes, rendererConfig } = config);
-
-      rendererConfig = rendererConfig || {};
+      if (Array.isArray(config)) {
+        routes = config;
+      } else {
+        if (config.rendererConfig) ({ rendererConfig } = config);
+        if (config.routes) ({ routes } = config);
+      }
     }
     const { outDir } = bundler.options;
     const prerenderer = new Prerenderer({
