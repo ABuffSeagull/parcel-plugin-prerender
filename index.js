@@ -1,3 +1,5 @@
+const ora = require('ora');
+const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
 const mkdirp = require('mkdirp');
@@ -5,10 +7,13 @@ const cosmiconfig = require('cosmiconfig');
 const Prerenderer = require('@prerenderer/prerenderer');
 const Puppeteer = require('@prerenderer/renderer-puppeteer');
 const htmlnano = require('htmlnano');
+const prettyMs = require('pretty-ms');
 
 module.exports = bundler => {
   bundler.on('buildEnd', async () => {
     if (process.env.NODE_ENV !== 'production') return;
+    console.log('');
+    const spinner = ora(chalk.grey('Prerendering')).start();
     let routes = ['/']; // the default route
     let rendererConfig = {};
     const found = await cosmiconfig('prerender').search();
@@ -26,7 +31,6 @@ module.exports = bundler => {
       staticDir: outDir,
       renderer: new Puppeteer(rendererConfig),
     });
-    console.log('\nRendering...');
     try {
       await prerenderer.initialize();
       const start = Date.now();
@@ -44,7 +48,10 @@ module.exports = bundler => {
           console.error(err);
         }
       }));
-      console.log(`Finished rendering in ${end - start}ms.`);
+      spinner.stopAndPersist({
+        symbol: '✨ ',
+        text: chalk.green(`Prerendered in ${prettyMs(end - start)}.`)
+      });
       prerenderer.destroy();
     } catch (err) {
       prerenderer.destroy();
