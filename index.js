@@ -35,7 +35,6 @@ module.exports = bundler => {
       await prerenderer.initialize();
       const start = Date.now();
       const renderedRoutes = await prerenderer.renderRoutes(routes);
-      const end = Date.now();
       await Promise.all(
         renderedRoutes.map(async route => {
           try {
@@ -44,12 +43,12 @@ module.exports = bundler => {
             mkdirp.sync(outputDir);
             const { html } = await htmlnano.process(route.html.trim());
             fs.writeFileSync(file, html);
-            const end = Date.now();
           } catch (err) {
             console.error(err);
           }
         })
       );
+      const end = Date.now();
       spinner.stopAndPersist({
         symbol: '✨ ',
         text: chalk.green(`Prerendered in ${prettyMs(end - start)}.`),
