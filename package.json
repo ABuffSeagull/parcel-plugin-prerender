@@ -20,6 +20,7 @@
     "@prerenderer/prerenderer": "^0.7.2",
     "@prerenderer/renderer-puppeteer": "^0.2.0",
     "cosmiconfig": "^5.0.6",
+    "htmlnano": "^0.2.3",
     "mkdirp": "^0.5.1"
   },
   "devDependencies": {
