@@ -37,15 +37,11 @@ module.exports = bundler => {
       const renderedRoutes = await prerenderer.renderRoutes(routes);
       await Promise.all(
         renderedRoutes.map(async route => {
-          try {
-            const outputDir = path.join(outDir, route.route);
-            const file = path.normalize(`${outputDir}/index.html`);
-            mkdirp.sync(outputDir);
-            const { html } = await htmlnano.process(route.html.trim());
-            fs.writeFileSync(file, html);
-          } catch (err) {
-            console.error(err);
-          }
+          const outputDir = path.join(outDir, route.route);
+          const file = path.resolve(outputDir, 'index.html');
+          mkdirp.sync(outputDir);
+          const { html } = await htmlnano.process(route.html.trim());
+          fs.writeFileSync(file, html);
         })
       );
       const end = Date.now();
@@ -53,10 +49,11 @@ module.exports = bundler => {
         symbol: '✨ ',
         text: chalk.green(`Prerendered in ${prettyMs(end - start)}.`),
       });
+    } catch (e) {
+      console.error(e);
+      process.exit(1);
+    } finally {
       prerenderer.destroy();
-    } catch (err) {
-      prerenderer.destroy();
-      console.error(err);
     }
   });
 };
