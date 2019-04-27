@@ -35,6 +35,7 @@
     "prettier": "^1.17.0"
   },
   "scripts": {
-    "lint": "eslint index.js tests/index.test.js"
+    "lint": "eslint index.js tests/index.test.js",
+    "test": "npm --prefix tests run test"
   }
 }
