@@ -14,18 +14,19 @@ npm install parcel-plugin-prerender -D
 ### Usage
 By default, this plugin will render the `/` path.
 As this plugin uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig),
-in order to add more paths, add an array of strings corresponding to the paths you want rendered in a 
-`routes` key in your `package.json`, or a JSON or YAML `.prerenderrc` file, or export the key in a `prerender.config.js` file.
+in order to configure the plugin,
+pass the configuration options in a `prerender` key in your `package.json`,
+or a JSON or YAML `.prerenderrc` file, or export the config object in a `prerender.config.js` file.
 
 ### Example
 
+If you just want to render multiple routes, you can pass a plain array in any of the above ways:
 ```json
-{
-  "prerender": {
-    "routes": ["/", "/about", "/login", "/deep/nested/route"]
-  }
-}
+// .prerenderrc
+["/", "/about", "/login", "/deep/nested/route"]
 ```
+
+Otherwise, you must pass it in a `routes` key, in order to configure the renderer, as follows.
 
 ### Render configuration
 
@@ -33,11 +34,9 @@ You can configure the renderer (browser) options by using the following example 
 
 ```json
 {
-  "prerender": {
-    "routes": ["/", "/about"],
-    "rendererConfig": {
-      "renderAfterDocumentEvent": "prerender-trigger"
-    }
+  "routes": ["/", "/about"],
+  "rendererConfig": {
+    "renderAfterDocumentEvent": "prerender-trigger"
   }
 }
 ```
@@ -57,11 +56,9 @@ The custom configuration can also be useful for debugging. If the resulting html
 
 ```json
 {
-  "prerender": {
-    "routes": ["/", "/about"],
-    "rendererConfig": {
-      "headless": false
-    }
+  "routes": ["/", "/about"],
+  "rendererConfig": {
+    "headless": false
   }
 }
 ```
