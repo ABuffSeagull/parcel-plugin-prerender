@@ -3,6 +3,7 @@ const childProcess = require('child_process');
 const { promisify } = require('util');
 const exec = promisify(childProcess.exec);
 const { promises: fs } = require('fs');
+const del = require('del');
 
 function runBuild(filename) {
   return exec(`npx parcel build ${filename} -o index.html`);
@@ -14,10 +15,8 @@ function pathJoin(...args) {
 
 const baseRoute = 'Route: ';
 
-beforeEach(async function() {
-  try {
-    await fs.unlink(pathJoin('.prerenderrc'));
-  } catch (e) {}
+beforeEach(function() {
+  del.sync(['dist', '.prerenderrc']);
 });
 
 it('should run with default route', async function() {
