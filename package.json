@@ -20,8 +20,11 @@
     "@prerenderer/prerenderer": "^0.7.2",
     "@prerenderer/renderer-puppeteer": "^0.2.0",
     "chalk": "^2.4.2",
+    "cheerio": "^1.0.0-rc.3",
     "cosmiconfig": "^5.2.0",
     "htmlnano": "^0.2.3",
+    "is-relative-url": "^3.0.0",
+    "lodash.difference": "^4.5.0",
     "mkdirp": "^0.5.1",
     "ora": "^3.4.0",
     "pretty-ms": "^5.0.0"
