@@ -1,9 +1,9 @@
 const path = require('path');
 const childProcess = require('child_process');
 const { promisify } = require('util');
-const exec = promisify(childProcess.exec);
 const { promises: fs } = require('fs');
 const del = require('del');
+const exec = promisify(childProcess.exec);
 
 function runBuild(filename) {
   return exec(`npx parcel build ${filename} -o index.html`);
@@ -15,17 +15,17 @@ function pathJoin(...args) {
 
 const baseRoute = 'Route: ';
 
-beforeEach(function() {
+beforeEach(function () {
   del.sync(['dist', '.prerenderrc']);
 });
 
-it('should run with default route', async function() {
+it('should run with default route', async function () {
   await runBuild('basic.html');
   const htmlFile = await fs.readFile(pathJoin('dist', 'index.html'), 'utf-8');
-  expect(htmlFile).toEqual(expect.stringContaining(baseRoute + '/'));
+  expect(htmlFile).toEqual(expect.stringContaining(`${baseRoute}/`));
 });
 
-it('should run with multiple routes', async function() {
+it('should run with multiple routes', async function () {
   const routes = ['/', '/foo', '/bar'];
   await fs.writeFile('.prerenderrc', JSON.stringify(routes));
   await runBuild('basic.html');
@@ -38,7 +38,7 @@ it('should run with multiple routes', async function() {
   }
 });
 
-it('should run with nested routes', async function() {
+it('should run with nested routes', async function () {
   const route = '/foo/bar/baz';
   await fs.writeFile('.prerenderrc', JSON.stringify([route]));
   await runBuild('basic.html');
@@ -49,12 +49,8 @@ it('should run with nested routes', async function() {
   expect(htmlFile).toEqual(expect.stringContaining(baseRoute + route));
 });
 
-it('should run with an api call', async function() {
-  const config = {
-    rendererConfig: {
-      renderAfterDocumentEvent: 'prerender-trigger',
-    },
-  };
+it('should run with an api call', async function () {
+  const config = { rendererConfig: { renderAfterDocumentEvent: 'prerender-trigger' } };
   await fs.writeFile('.prerenderrc', JSON.stringify(config));
   await runBuild('api_test.html');
   const htmlFile = await fs.readFile(pathJoin('dist', 'index.html'), 'utf-8');

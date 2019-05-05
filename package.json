@@ -27,15 +27,13 @@
     "pretty-ms": "^5.0.0"
   },
   "devDependencies": {
+    "@abuffseagull/eslint-config-node": "^4.0.2",
     "eslint": "^5.16.0",
-    "eslint-config-healthier": "^2.0.0",
-    "eslint-config-prettier": "^4.2.0",
-    "eslint-plugin-jest": "^22.5.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "prettier": "^1.17.0"
+    "eslint-formatter-kakoune": "^1.0.0",
+    "eslint-plugin-jest": "^22.5.1"
   },
   "scripts": {
-    "lint": "eslint index.js tests/index.test.js",
+    "lint": "eslint index.js",
     "test": "npm --prefix tests run test"
   }
 }
