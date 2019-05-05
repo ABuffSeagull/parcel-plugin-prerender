@@ -27,6 +27,13 @@
     "pretty-ms": "^5.0.0"
   },
   "devDependencies": {
-    "prettier": "^1.17.0"
+    "@abuffseagull/eslint-config-node": "^4.0.2",
+    "eslint": "^5.16.0",
+    "eslint-formatter-kakoune": "^1.0.0",
+    "eslint-plugin-jest": "^22.5.1"
+  },
+  "scripts": {
+    "lint": "eslint index.js",
+    "test": "npm --prefix tests run test"
   }
 }
