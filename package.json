@@ -20,17 +20,17 @@
     "@prerenderer/prerenderer": "^0.7.2",
     "@prerenderer/renderer-puppeteer": "^0.2.0",
     "chalk": "^2.4.2",
-    "cosmiconfig": "^5.2.0",
-    "htmlnano": "^0.2.3",
+    "cosmiconfig": "^5.2.1",
+    "htmlnano": "^0.2.4",
     "mkdirp": "^0.5.1",
     "ora": "^3.4.0",
     "pretty-ms": "^5.0.0"
   },
   "devDependencies": {
     "@abuffseagull/eslint-config-node": "^4.0.2",
-    "eslint": "^5.16.0",
+    "eslint": "^6.1.0",
     "eslint-formatter-kakoune": "^1.0.0",
-    "eslint-plugin-jest": "^22.5.1"
+    "eslint-plugin-jest": "^22.14.0"
   },
   "scripts": {
     "lint": "eslint index.js",
