@@ -27,7 +27,7 @@
     "pretty-ms": "^5.0.0"
   },
   "devDependencies": {
-    "@abuffseagull/eslint-config-node": "^4.0.2",
+    "@abuffseagull/eslint-config-node": "^4.0.3",
     "eslint": "^6.1.0",
     "eslint-formatter-kakoune": "^1.0.0",
     "eslint-plugin-jest": "^22.14.0"
