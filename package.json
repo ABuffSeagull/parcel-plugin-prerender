@@ -25,7 +25,7 @@
     "mkdirp": "^0.5.1",
     "ora": "^3.4.0",
     "pretty-ms": "^5.0.0",
-    "snyk": "^1.232.0"
+    "snyk": "^1.280.1"
   },
   "devDependencies": {
     "@abuffseagull/eslint-config-node": "^4.0.3",
