@@ -24,7 +24,8 @@
     "htmlnano": "^0.2.4",
     "mkdirp": "^0.5.1",
     "ora": "^3.4.0",
-    "pretty-ms": "^5.0.0"
+    "pretty-ms": "^5.0.0",
+    "snyk": "^1.232.0"
   },
   "devDependencies": {
     "@abuffseagull/eslint-config-node": "^4.0.3",
@@ -34,6 +35,9 @@
   },
   "scripts": {
     "lint": "eslint index.js",
-    "test": "npm --prefix tests run test"
-  }
+    "test": "npm --prefix tests run test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }
