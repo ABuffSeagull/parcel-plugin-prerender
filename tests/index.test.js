@@ -3,6 +3,7 @@ const childProcess = require('child_process');
 const { promisify } = require('util');
 const { promises: fs } = require('fs');
 const del = require('del');
+const detect = require('detect-port');
 const exec = promisify(childProcess.exec);
 
 function runBuild(filename) {
@@ -58,3 +59,11 @@ it('should run with an api call', async function () {
   expect(htmlFile).toEqual(expect.stringContaining('date of publication'));
   expect(htmlFile).toEqual(expect.stringContaining('Sample Slide Show'));
 });
+
+it('should work with custom server port', async function () {
+  const config = { serverConfig: { port: await detect(8110) } };
+  await fs.writeFile('.prerenderrc', JSON.stringify(config));
+  await runBuild('basic.html');
+  const htmlFile = await fs.readFile(pathJoin('dist', 'index.html'), 'utf-8');
+  expect(htmlFile).toEqual(expect.stringContaining(`${baseRoute}/`));
+})

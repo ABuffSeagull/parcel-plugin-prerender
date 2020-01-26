@@ -67,6 +67,20 @@ To make the pre-render browser visible and you would be available to debug.
 
 To see all the options available see this [documentation](https://github.com/Tribex/prerenderer#prerendererrenderer-puppeteer-options)
 
+### Renderer server configuration
+
+By default Prerender server start at first free port after 8000 as noted in [documentation](https://github.com/JoshTheDerf/prerenderer#server-options), but if your API require frontend to be run at specific port, you can pass server configuration as follows,
+
+```json
+{
+  "serverConfig": {
+    "port": 8100
+  }
+}
+```
+
+This might be helpful, for example, when API allows CORS headers only for requests from specific origins and not `http://localhost:8000` as in default configuration.
+
 ## What is Prerendering?
 
 To quote [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin/blob/master/README.md):
@@ -84,5 +98,5 @@ To quote [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plu
 
 ## Available Renderers
 
-Currently only `@prerenderer/renderer-puppeteer` is supported, although `@prerenderer/renderer-jsdom` 
+Currently only `@prerenderer/renderer-puppeteer` is supported, although `@prerenderer/renderer-jsdom`
 will probably be supported in the future

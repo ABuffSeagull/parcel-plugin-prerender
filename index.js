@@ -16,6 +16,7 @@ module.exports = function prerender(bundler) {
     const spinner = ora(chalk.grey('Prerendering')).start();
     let routes = ['/']; // the default route
     let rendererConfig = {};
+    let serverConfig = {};
     const found = await cosmiconfig('prerender').search();
     if (found) {
       const { config } = found;
@@ -23,12 +24,14 @@ module.exports = function prerender(bundler) {
         routes = config;
       } else {
         if (config.rendererConfig) ({ rendererConfig } = config);
+        if (config.serverConfig) ({ serverConfig } = config);
         if (config.routes) ({ routes } = config);
       }
     }
     const { outDir } = bundler.options;
     const prerenderer = new Prerenderer({
       staticDir: outDir,
+      server: serverConfig,
       renderer: new Puppeteer(rendererConfig),
     });
     try {
