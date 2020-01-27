@@ -22,7 +22,6 @@
     "chalk": "^2.4.2",
     "cosmiconfig": "^5.2.1",
     "htmlnano": "^0.2.4",
-    "mkdirp": "^0.5.1",
     "ora": "^3.4.0",
     "pretty-ms": "^5.0.0"
   },
