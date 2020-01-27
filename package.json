@@ -19,10 +19,10 @@
   "dependencies": {
     "@prerenderer/prerenderer": "^0.7.2",
     "@prerenderer/renderer-puppeteer": "^0.2.0",
-    "chalk": "^2.4.2",
-    "cosmiconfig": "^5.2.1",
+    "chalk": "^3.0.0",
+    "cosmiconfig": "^6.0.0",
     "htmlnano": "^0.2.5",
-    "ora": "^3.4.0",
+    "ora": "^4.0.3",
     "pretty-ms": "^5.1.0"
   },
   "devDependencies": {
@@ -31,7 +31,7 @@
     "eslint-config-prettier": "^6.9.0",
     "eslint-formatter-kakoune": "^1.0.0",
     "eslint-plugin-import": "^2.20.0",
-    "eslint-plugin-jest": "^22.21.0",
+    "eslint-plugin-jest": "^23.6.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-unicorn": "^15.0.1",
     "prettier": "^1.19.1"
