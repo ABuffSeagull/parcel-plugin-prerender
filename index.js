@@ -35,14 +35,16 @@ module.exports = function prerender(bundler) {
       await prerenderer.initialize();
       const start = Date.now();
       const renderedRoutes = await prerenderer.renderRoutes(routes);
-      await Promise.all(renderedRoutes.map(async route => {
-        const outputDir = path.join(outDir, route.route);
-        const file = path.resolve(outputDir, 'index.html');
-        mkdirp.sync(outputDir);
-        const { html } = await htmlnano.process(route.html.trim());
-        // eslint-disable-next-line no-sync
-        fs.writeFileSync(file, html);
-      }));
+      await Promise.all(
+        renderedRoutes.map(async (route) => {
+          const outputDirectory = path.join(outDir, route.route);
+          const file = path.resolve(outputDirectory, 'index.html');
+          mkdirp.sync(outputDirectory);
+          const { html } = await htmlnano.process(route.html.trim());
+          // eslint-disable-next-line no-sync
+          fs.writeFileSync(file, html);
+        }),
+      );
       const end = Date.now();
       spinner.stopAndPersist({
         symbol: '✨ ',

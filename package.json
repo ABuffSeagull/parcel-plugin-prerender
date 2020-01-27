@@ -27,10 +27,15 @@
     "pretty-ms": "^5.0.0"
   },
   "devDependencies": {
-    "@abuffseagull/eslint-config-node": "^4.0.3",
-    "eslint": "^6.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.9.0",
     "eslint-formatter-kakoune": "^1.0.0",
-    "eslint-plugin-jest": "^22.14.0"
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jest": "^22.14.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-unicorn": "^15.0.1",
+    "prettier": "^1.19.1"
   },
   "scripts": {
     "lint": "eslint index.js",
