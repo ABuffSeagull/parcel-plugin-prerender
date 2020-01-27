@@ -12,7 +12,7 @@ npm install parcel-plugin-prerender -D
 ```
 
 ### Usage
-By default, this plugin will render the `/` path.
+By default, this plugin will render the `/` path when building with parcel (i.e. `parcel build` or `process.env.NODE_ENV == "production"`).
 As this plugin uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig),
 in order to configure the plugin,
 pass the configuration options in a `prerender` key in your `package.json`,

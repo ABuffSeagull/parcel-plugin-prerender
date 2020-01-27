@@ -23,7 +23,8 @@
     "cosmiconfig": "^6.0.0",
     "htmlnano": "^0.2.5",
     "ora": "^4.0.3",
-    "pretty-ms": "^5.1.0"
+    "pretty-ms": "^5.1.0",
+    "snyk": "^1.232.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
@@ -38,6 +39,9 @@
   },
   "scripts": {
     "lint": "eslint index.js",
-    "test": "npm --prefix tests run test"
-  }
+    "test": "npm --prefix tests run test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }
