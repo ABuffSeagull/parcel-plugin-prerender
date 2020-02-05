@@ -24,7 +24,7 @@
     "htmlnano": "^0.2.5",
     "ora": "^4.0.3",
     "pretty-ms": "^5.1.0",
-    "snyk": "^1.232.0"
+    "snyk": "^1.290.1"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
