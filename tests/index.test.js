@@ -16,7 +16,7 @@ function pathJoin(...args) {
 const baseRoute = 'Route: ';
 
 beforeEach(function () {
-  del.sync(['dist', '.prerenderrc']);
+  del.sync(['dist', '.prerenderrc', '.cache']);
 });
 
 it('should run with default route', async function () {
