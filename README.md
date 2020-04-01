@@ -1,4 +1,5 @@
 # parcel-plugin-prerender
+[![Known Vulnerabilities](https://snyk.io/test/github/abuffseagull/parcel-plugin-prerender/badge.svg)](https://snyk.io/test/github/abuffseagull/parcel-plugin-prerender)
 
 ## About
 
