@@ -23,7 +23,8 @@
     "cosmiconfig": "^6.0.0",
     "htmlnano": "^0.2.5",
     "ora": "^4.0.3",
-    "pretty-ms": "^5.1.0"
+    "pretty-ms": "^5.1.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
@@ -34,13 +35,13 @@
     "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-unicorn": "^15.0.1",
-    "prettier": "^1.19.1",
-    "snyk": "^1.305.0"
+    "prettier": "^1.19.1"
   },
   "scripts": {
     "lint": "eslint index.js",
     "test": "snyk test && npm --prefix tests run test",
-    "snyk-protect": "snyk protect"
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "snyk": true
 }
