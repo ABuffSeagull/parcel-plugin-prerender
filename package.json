@@ -35,7 +35,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-unicorn": "^15.0.1",
     "prettier": "^1.19.1",
-    "snyk": "^1.305.0"
+    "snyk": "^1.305.1"
   },
   "scripts": {
     "lint": "eslint index.js",
