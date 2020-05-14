@@ -22,7 +22,7 @@
     "chalk": "^3.0.0",
     "cosmiconfig": "^6.0.0",
     "htmlnano": "^0.2.5",
-    "ora": "^4.0.3",
+    "ora": "^4.0.4",
     "pretty-ms": "^5.1.0"
   },
   "devDependencies": {
