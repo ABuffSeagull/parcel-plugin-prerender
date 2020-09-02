@@ -57,3 +57,5 @@ patch:
         patched: '2020-09-02T14:42:06.408Z'
     - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/dep-graph > graphlib > lodash:
         patched: '2020-09-02T14:42:06.408Z'
+    - snyk > snyk-nodejs-lockfile-parser > @yarnpkg/core > lodash:
+        patched: '2020-09-02T14:43:12.875Z'
