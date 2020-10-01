@@ -21,19 +21,19 @@
     "@prerenderer/renderer-puppeteer": "^0.2.0",
     "chalk": "^3.0.0",
     "cosmiconfig": "^6.0.0",
-    "htmlnano": "^0.2.5",
-    "ora": "^4.0.3",
+    "htmlnano": "^0.2.6",
+    "ora": "^4.1.1",
     "pretty-ms": "^5.1.0",
-    "snyk": "^1.388.0"
+    "snyk": "^1.406.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.12.0",
     "eslint-formatter-kakoune": "^1.0.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jest": "^23.8.2",
-    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-unicorn": "^15.0.1",
     "prettier": "^1.19.1"
   },
