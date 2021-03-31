@@ -6,7 +6,7 @@
   "devDependencies": {
     "cross-env": "^7.0.2",
     "del": "^5.1.0",
-    "jest": "^25.5.4",
+    "jest": "^26.0.0",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-prerender": "file:../"
   },
